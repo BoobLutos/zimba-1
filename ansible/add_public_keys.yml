@@ -1,0 +1,20 @@
+---
+- hosts: master
+  become: yes
+  tasks:
+    - name: install public keys
+      ansible.posix.authorized_key:
+        user: ubuntu
+        state: present
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub')}}"    
+- hosts: nodes
+  become: yes
+  tasks:
+    - name: install public keys
+      ansible.posix.authorized_key:
+        user: ubuntu
+        state: present
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub')}}"
+
+# run this play book by providing the private key of the remote host. 
+#otherwise, use a parameter to ask for the password e.g   ansible-playbook add_public_key.yaml --private-key terraformkey1.pem
