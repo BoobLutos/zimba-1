@@ -5,13 +5,12 @@ Essential commands
 
 docker image build -t bobu .
 docker image build -t expdockapp .
+docker images
 docker run -p 9900:8080 -d bobu
 docker ps
+docker rmi -f 766111a9f962
 docker exec -it 5fcce598d437 /bin/bash    #### To enter container
 docker stop 5fcce598d437
-
-
-expdockapp
 
 docker tag bobu:latest public.ecr.aws/g7q5l3w2/expdockapp:latest
 docker push public.ecr.aws/g7q5l2w2/expdockapp:latest
