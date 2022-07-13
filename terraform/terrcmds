@@ -1,1 +1,10 @@
-add some code here
+Essential commands
+
+##############
+terraform state list ***
+terraform state show ***
+terraform output
+terraform refresh
+terraform destroy -target aws_instance.web-server-instance
+terraform apply -target aws_instance.web-server-instance
+
