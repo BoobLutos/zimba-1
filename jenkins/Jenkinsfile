@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                cd /myapp
+                cd jenkins/myapp
                 pip install -r requirements.txt
                 '''
             }
