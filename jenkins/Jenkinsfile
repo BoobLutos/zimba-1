@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     triggers {
         pollSCM '* * * * *'
     }
@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                cd /home/boob/zimba/docker/jenkins-101/myapp
+                cd /myapp
                 pip install -r requirements.txt
                 '''
             }
