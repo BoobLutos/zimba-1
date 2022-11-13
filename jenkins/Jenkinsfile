@@ -1,6 +1,8 @@
 pipeline {
     agent {
-        docker { image 'node:16.13.1-alpine' }
+        node { 
+            label 'docker-agent-python'
+         }
     }
 
     triggers {
@@ -22,7 +24,7 @@ pipeline {
                 sh '''
                 cd myapp
                 python3 hello.py
-                python3 hello.py --name=Brad
+                python3 hello.py --name=boobu
                 '''
             }
         }
