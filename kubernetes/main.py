@@ -17,4 +17,4 @@ def greet(username):
     return f"Hi there, {username}!"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=1010, debug=True)
